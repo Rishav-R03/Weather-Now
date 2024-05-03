@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
 </head>
 
 <body>
@@ -39,31 +39,6 @@
             </div>
         </div>
     </div>
-    <script>
-        // const apikey1 = "bb040a7168b7d198b1873beaa235cb9a";
-        const apiKey = "bb040a7168b7d198b1873beaa235cb9a";
-        const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-        const searchBox = document.querySelector(".search input");
-        const searchBtn = document.querySelector(".search button");
-        const weatherIcon = document.querySelector("weather-icon");
-        async function checkWeather(city) {
-            const response = await fetch(apiURL + city + `&appid=${apiKey}`);
-            var data = await response.json();
-            console.log(data);
-
-            document.querySelector(".city").innerHTML = data.name;
-            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-            document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-        }
-        searchBtn.addEventListener("click", () => {
-            checkWeather(searchBox.value);
-        })
-        if (data.weather[0].main == "clouds") {
-            weatherIcon.src = "images/clouds.png";
-        }
-    </script>
 </body>
 
 </html>
